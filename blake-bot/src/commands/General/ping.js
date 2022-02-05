@@ -1,5 +1,6 @@
 const { Command } = require('@sapphire/framework');
 const { send } = require('@sapphire/plugin-editable-commands');
+const { MessageEmbed } = require('discord.js')
 
 class UserCommand extends Command {
 	constructor(context, options) {
@@ -10,13 +11,25 @@ class UserCommand extends Command {
 	}
 
 	async messageRun(message) {
-		const msg = await send(message, 'Ping?');
+		const msg = await message.reply({
+			embeds: [
+				new MessageEmbed()
+				.setDescription('Ping?')
+				.setColor(this.container.config.invisembed)
+			]
+		})
 
 		const content = `Pong from JavaScript! Bot Latency ${Math.round(this.container.client.ws.ping)}ms. API Latency ${
 			msg.createdTimestamp - message.createdTimestamp
 		}ms.`;
 
-		return send(message, content);
+		return msg.edit({
+			embeds: [
+				new MessageEmbed()
+				.setDescription(content)
+				.setColor(this.container.config.invisembed)
+			]
+		})
 	}
 }
 

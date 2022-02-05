@@ -15,7 +15,7 @@ class UserEvent extends Listener {
 		if (message.author.bot) return;
 
 		// Run the message parser.
-		this.container.client.emit('preMessageParsed', message);
+		//this.container.client.emit('preMessageParsed', message);
 	}
 }
 

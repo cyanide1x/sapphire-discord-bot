@@ -4,7 +4,8 @@ const Discord = require('discord.js')
 class UserCommand extends SubCommandPluginCommand {
     constructor(context, options) {
         super(context, {
-            ...options
+            ...options,
+            preconditions: ['OwnerOnly']
         });
     }
 
