@@ -1,0 +1,24 @@
+{
+  "name": "sapphire-discord-bot",
+  "version": "1.0.0",
+  "description": "Sapphire Discord Bot Created with JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cyanide1x/sapphire-discord-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cyanide1x/sapphire-discord-bot/issues"
+  },
+  "homepage": "https://github.com/cyanide1x/sapphire-discord-bot#readme",
+  "dependencies": {
+    "@sapphire/framework": "^2.3.0",
+    "install": "^0.13.0",
+    "npm": "^8.4.0"
+  }
+}
