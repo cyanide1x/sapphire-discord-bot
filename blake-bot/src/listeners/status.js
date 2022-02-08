@@ -17,8 +17,8 @@ class UserEvent extends Listener {
         const { client } = this.container
 
         client.user.setActivity({
-            type: "COMPETING",
-            name: "in Gay Olympics"
+            type: "WATCHING",
+            name: "@Sapphire/framework"
         })
     }
 }

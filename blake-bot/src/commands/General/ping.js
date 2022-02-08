@@ -6,7 +6,11 @@ class UserCommand extends Command {
 	constructor(context, options) {
 		super(context, {
 			...options,
-			description: 'ping pong'
+			description: 'ping pong',
+			chatInputCommand: {
+				register: true,
+				guildIds: ["938551780512518164"]
+			}
 		});
 	}
 
@@ -14,20 +18,39 @@ class UserCommand extends Command {
 		const msg = await message.reply({
 			embeds: [
 				new MessageEmbed()
-				.setDescription('Ping?')
-				.setColor(this.container.config.invisembed)
+					.setDescription('Ping?')
+					.setColor(this.container.config.invisembed)
 			]
 		})
 
-		const content = `Pong from JavaScript! Bot Latency ${Math.round(this.container.client.ws.ping)}ms. API Latency ${
-			msg.createdTimestamp - message.createdTimestamp
-		}ms.`;
+		const content = `Pong from JavaScript! Bot Latency ${Math.round(this.container.client.ws.ping)}ms. API Latency ${msg.createdTimestamp - message.createdTimestamp
+			}ms.`;
 
 		return msg.edit({
 			embeds: [
 				new MessageEmbed()
-				.setDescription(content)
-				.setColor(this.container.config.invisembed)
+					.setDescription(content)
+					.setColor(this.container.config.invisembed)
+			]
+		})
+	}
+
+	async chatInputRun(interaction) {
+		await interaction.reply({
+			embeds: [
+				new MessageEmbed()
+					.setDescription('Ping?')
+					.setColor(this.container.config.invisembed)
+			]
+		})
+
+		const content = `Pong from JavaScript! Bot Latency ${Math.round(this.container.client.ws.ping)}ms.`;
+
+		return interaction.editReply({
+			embeds: [
+				new MessageEmbed()
+					.setDescription(content)
+					.setColor(this.container.config.invisembed)
 			]
 		})
 	}

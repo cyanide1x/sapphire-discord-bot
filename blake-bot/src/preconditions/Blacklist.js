@@ -7,8 +7,16 @@ class UserPrecondition extends Precondition {
 			position: 11
 		})
 	}
-	run(message) {
+	messageRun(message) {
 		const isBlacklisted = this.container.db.get(`blacklisted_${message.author.id}`)
+
+		if(isBlacklisted) return this.error({ message: "You are blacklisted from using me!" })
+
+		if(!isBlacklisted) return this.ok()
+	}
+
+	chatInputRun(interaction) {
+		const isBlacklisted = this.container.db.get(`blacklisted_${interaction.user.id}`)
 
 		if(isBlacklisted) return this.error({ message: "You are blacklisted from using me!" })
 

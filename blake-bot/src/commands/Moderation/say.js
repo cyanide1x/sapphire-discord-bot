@@ -1,6 +1,6 @@
-const { SubCommandPluginCommand } = require('@sapphire/plugin-subcommands');
+const { Command } = require('@sapphire/framework');
 
-class UserCommand extends SubCommandPluginCommand {
+class UserCommand extends Command {
     constructor(context, options) {
         super(context, {
             ...options,

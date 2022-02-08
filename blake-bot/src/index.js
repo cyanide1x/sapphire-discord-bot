@@ -25,7 +25,8 @@ const client = new SapphireClient({
 		'DIRECT_MESSAGES',
 		'DIRECT_MESSAGE_REACTIONS'
 	],
-	fetchPrefix: fetchPrefix
+	fetchPrefix: fetchPrefix,
+	loadMessageCommandListeners: true
 });
 
 const main = async () => {

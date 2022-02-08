@@ -1,7 +1,7 @@
-const { SubCommandPluginCommand } = require('@sapphire/plugin-subcommands');
+const { Command } = require('@sapphire/framework');
 const { MessageEmbed, Message } = require('discord.js')
 
-class UserCommand extends SubCommandPluginCommand {
+class UserCommand extends Command {
     constructor(context, options) {
         super(context, {
             ...options,
