@@ -1,7 +1,7 @@
 {
   "name": "sapphire-discord-bot",
   "version": "1.0.0",
-  "description": "Sapphire Discord Bot Created with JavaScript",
+  "description": "Sapphire Discord Bot Created with JavaScript and SapphireJS",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
