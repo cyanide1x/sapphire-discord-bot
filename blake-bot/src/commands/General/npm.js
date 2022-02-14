@@ -47,7 +47,7 @@ class UserCommand extends Command {
                     if (message.author.id === user.author.id) return true
                 };
 
-                const response = await askMsg.channel.awaitMessages({ filter, max: 1, time: 10000, errors: ["time"] })
+                await askMsg.channel.awaitMessages({ filter, max: 1, time: 10000, errors: ["time"] })
                     .then((collected) => {
                         if (collected.first().content === 'cancel') return collected.first().react('👍')
                         return npmmodule = collected.first().content

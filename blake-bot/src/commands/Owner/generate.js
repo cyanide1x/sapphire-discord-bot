@@ -14,7 +14,7 @@ class UserCommand extends Command {
 
         var exec = require('child_process').exec;
 
-        exec(`sapphire generate command ${command}`,
+        exec(`npx sapphire generate command ${command}`,
             function (error, stdout, stderr) {
                 message.reply(stdout)
                 console.log('stderr: ' + stderr);
